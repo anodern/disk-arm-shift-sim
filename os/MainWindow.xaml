@@ -1,0 +1,35 @@
+﻿<Window x:Class="anodern.os.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:anodern.os"
+        mc:Ignorable="d"
+        Title="移臂调度算法模拟 by anodern" Height="350" Width="830" WindowStartupLocation="CenterScreen">
+    <Grid Height="318">
+        <GroupBox Header="算法" Margin="10,10,0,0" HorizontalAlignment="Left" Width="174" Height="118" VerticalAlignment="Top">
+            <Grid>
+                <RadioButton x:Name="radio_fcfs" Content="FCFS 先来先服务" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="radio_sstf" Content="SSTF 最短寻找时间优先" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radio_scan" Content="SCAN 双向扫描" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radio_elev" Content="电梯算法" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <Canvas x:Name="canvas" Margin="205,33,25,10" Width="600"/>
+        <Button x:Name="btn_sim" Content="模拟" HorizontalAlignment="Left" Margin="10,0,0,11" VerticalAlignment="Bottom" Height="30" Width="74" Click="btn_sim_Click"/>
+        <Button x:Name="btn_clear" Content="清除" HorizontalAlignment="Left" Margin="108,0,0,10" VerticalAlignment="Bottom" Height="31" Width="76" Click="btn_clear_Click"/>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="205,10,0,0" Width="600" Height="18" VerticalAlignment="Top" SmallChange="1" Maximum="200" RenderTransformOrigin="0.5,0.5" IsEnabled="False"/>
+        <TextBox x:Name="text_count" HorizontalAlignment="Left" Margin="85,141,0,0" Text="200" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" TextChanged="text_count_TextChanged"/>
+        <Label Content="柱面数量：" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top"/>
+        <Label Content="访问序列：" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="text_query" HorizontalAlignment="Left" Margin="10,252,0,0" Text="86,147,91,177,94,150,102,175,130" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="20"/>
+        <TextBox x:Name="text_start" HorizontalAlignment="Left" Margin="85,200,0,0" Text="143" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" TextChanged="text_start_TextChanged"/>
+        <Label Content="初始位置：" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="text_total" Content="移动量：" Margin="327,277,393,16"/>
+        <Label x:Name="text_now" Content="当前位置：" Margin="210,277,508,16"/>
+        <TextBox x:Name="text_last" HorizontalAlignment="Left" Margin="85,170,0,0" Text="125" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" TextChanged="text_start_TextChanged"/>
+        <Label Content="之前位置：" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="text_avg" Content="平均寻道长度：" Margin="442,277,244,16"/>
+        <Label x:Name="text_copyright" Content="anodern" Margin="730,277,25,16"/>
+    </Grid>
+</Window>
